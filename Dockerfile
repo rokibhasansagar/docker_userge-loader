@@ -13,7 +13,8 @@ RUN apt -qq update && \
     gnupg2 \
     unzip \
     wget \
-    ffmpeg
+    ffmpeg && \
+    apt autoremove -qy
 
 # install chrome
 RUN mkdir -p /tmp/ && \
