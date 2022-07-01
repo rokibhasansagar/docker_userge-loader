@@ -45,7 +45,7 @@ jobs:
           echo ".git" > .dockerignore
           
           docker buildx build . --file Dockerfile --compress --no-cache
-          --rm --force-rm --push --platform linux/amd64
+          --rm --force-rm --push --platform linux/amd64,linux/amd64/v2,linux/amd64/v3
           --tag ${{ secrets.DOCKERHUB_USERNAME }}/userge-loader:$(date +%Y.%j.%H)
           --tag ${{ secrets.DOCKERHUB_USERNAME }}/userge-loader:latest
           
