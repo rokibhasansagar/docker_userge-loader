@@ -46,7 +46,7 @@ jobs:
           
           docker buildx build . --file Dockerfile --quiet --compress
           --no-cache --rm --force-rm --push
-          --platform linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/amd64/v4,linux/arm64
+          --platform linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64
           --tag ${{ secrets.DOCKERHUB_USERNAME }}/userge-loader:$(date +%Y.%j.%H)
           --tag ${{ secrets.DOCKERHUB_USERNAME }}/userge-loader:latest
           
