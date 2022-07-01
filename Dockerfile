@@ -1,6 +1,8 @@
 # set base image (host OS)
 FROM python:3.9
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # set the working directory in the container
 WORKDIR /app/
 
@@ -36,7 +38,8 @@ ENV GOOGLE_CHROME_BIN /usr/bin/google-chrome-stable
 # install node-js
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -qy nodejs && \
-    npm i -g npm
+    npm i -g npm && \
+    apt autoremove -qy
 
 # install rar
 RUN mkdir -p /tmp/ && \
